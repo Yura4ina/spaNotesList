@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.spa-notes-area > app-spanotes{
+	width: 100%;
+}
+.mainInputForm{
+    width: 80%;
+    margin: 130px auto 0;
+}
+.head-btn{
+    padding: 5% 5%;
+}
+.head-btn > .btn{
+	width: 100%;
+}

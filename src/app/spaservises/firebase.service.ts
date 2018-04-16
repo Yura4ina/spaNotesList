@@ -4,7 +4,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 @Injectable()
 export class FirebaseService {
   
-  queryList: AngularFireList<any>;
+  noteList: AngularFireList<any>;
   commentList: AngularFireList<any>;
 
   constructor(private firebasedb:AngularFireDatabase) {
@@ -12,8 +12,8 @@ export class FirebaseService {
   }
 
   getNoteList(){
-    this.queryList = this.firebasedb.list('queryes');
-    return this.queryList;
+    this.noteList = this.firebasedb.list('queryes');
+    return this.noteList;
   }
 
   getCommentList(){
@@ -21,29 +21,29 @@ export class FirebaseService {
     return this.commentList;
   }
 
-  addNote(id: number, author: string, content: string){
-    this.queryList.push({
+  addNote(id: number, title: string, content: string){
+    this.noteList.push({
       id: id,
-      author: author,
+      title: title,
       content: content
     });
   }
 
-  addComment(noteId: number, comAuthor: string, comContent: string, date: string){
+  addComment(notes_id: number, comAuthor: string, comContent: string, date: string){
     this.commentList.push({
-        noteId: noteId,
+        notes_id: notes_id,
         date: date,
-        comAuthor: comAuthor,
-        comContent: comContent
+        author: comAuthor,
+        content: comContent
     });
   }
 
   updateNoteA($key: string, item: any){
-    this.queryList.update($key, item);
+    this.noteList.update($key, item);
   }
 
   removeNote($key: string){
-    this.queryList.remove($key);
+    this.noteList.remove($key);
   }
   removeNoteComents($key: string){
     this.commentList.remove($key);

@@ -3,22 +3,29 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { environment } from '../environments/environment';
-import { SpanotesComponent } from './spanotes/spanotes.component';
+import { config } from '../environments/environment';
+import { SingleQueryComponent } from './controllers/single-query/single-query.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SpanotesComponent
+    routingComponents,
+    SingleQueryComponent
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireModule.initializeApp(config.firebase),
+    AngularFireDatabaseModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  
+  
+}

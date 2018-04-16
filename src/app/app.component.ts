@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  radiob = '1';
+
+  setType(val){
+    this.radiob = val;
+  }
+  
+  getType(){
+    return this.radiob;
+  }
 }

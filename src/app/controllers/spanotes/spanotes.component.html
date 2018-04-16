@@ -1,0 +1,50 @@
+<div class="mainInputForm">
+  <div class="query-list">
+    <div class="row" *ngFor="let query of spaNoteListArray;">
+      <div class="col-md-12 query-item">
+            <div class="query row">
+                <div class="col-md-7">
+                    Note Author: {{query.author}}
+                </div>
+                <div class="col-md-5">
+                        <button type="button" class="btn btn-primary" (click)="onDeleteNote(query.id);onDeleteComents(query.id);">Delete Note</button>               
+                        <button type="button" class="btn btn-primary"  [routerLink]="['/editForm',query.id]">Edit Note</button>    
+                        <button type="button" class="btn btn-primary"  [routerLink]="['/singleQuery',query.id]">Open Note</button>    
+                </div>
+                <div class="col-md-12 query-item-content">
+                    Note content:
+                    {{query.content}}
+                </div>
+            </div>
+            <h3>Comments:</h3>
+            <div class="row comments" *ngFor="let comm of spaCommentListArray;">
+                <div class="comment col-md-12" *ngIf="comm.noteId == query.id">
+                    <div class="row">
+                            <div class="offset-md-1"></div>                    
+                            <div class="col-md-5">
+                                Comments exist:   {{comm.date}}
+                            </div>
+                            <div class="col-md-6">
+                                Comment author: {{comm.comAuthor}}
+                            </div>
+                            <div class="offset-md-2"></div>
+                            <div class="col-md-10">
+                                {{comm.comContent}}
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 head-inputs">
+                <label for="comAuthor">Comment Author name</label>
+                <input type="text" id="comAuthor" class="form-control" #comAut>
+                <label for="eFormControlTextarea1">Comment Query content</label>
+                <textarea rows="10" name="comment" id="eFormControlTextarea1" class="form-control" #comCont></textarea>
+            </div>
+            <div class="col-md-3 head-btn">
+                <button type="button" class="btn btn-primary" (click)="onAddComment(query.id,comAut,comCont)">Add comment</button>
+                <button type="button" class="btn btn-primary" (click)="onChType()">Type</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,25 @@
 <div class="container">
-  <div class="row spa-notes-area">
-    <app-spanotes></app-spanotes>
+  <div class="row spa-notes-area query-list-head">
+        <h1 class="col-md-12">Welcome to YourNotes</h1>
+        <div class="offset-md-3"></div>             
+        <button type="button" class="col-md-2 btn btn-primary" routerLink="/addForm" >Add Form</button>  
+        <div class="col-md-2">
+            <fieldset class="form-group">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="1" (click)="setType(1)" checked>
+                    FireBase
+                  </label>
+                </div>
+                <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="2" (click)="setType(2)">
+                    Localstorage
+                  </label>
+                </div>
+              </fieldset>
+        </div>             
+        <button type="button" class="col-md-2 btn btn-primary" routerLink="/viewList" >All Notes</button>  
   </div>
+  <router-outlet></router-outlet>
 </div>

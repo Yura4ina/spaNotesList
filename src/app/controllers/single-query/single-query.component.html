@@ -1,0 +1,38 @@
+<div class="mainInputForm">
+    <div class="query-list">
+      <div class="row" *ngFor="let query of spaNoteListArray;">
+        <div class="col-md-12 query-item" *ngIf="id==query.id">
+              <div class="query row">
+                  <div class="col-md-7">
+                        Note Author: {{query.author}}
+                  </div>
+                  <div class="col-md-5">
+                 </div>
+                  <div class="col-md-12 query-item-content">
+                        Note content:
+                      {{query.content}}
+                  </div>
+              </div>
+              <h3>Comments:</h3>
+              <div class="row comments" *ngFor="let comm of spaCommentListArray;">
+                  <div class="comment col-md-12" *ngIf="comm.noteId == id">
+                      <div class="row">
+                              <div class="offset-md-1"></div>                    
+                              <div class="col-md-5">
+                                  Comments exist:   {{comm.date}}
+                              </div>
+                              <div class="col-md-6">
+                                  Comment author: {{comm.comAuthor}}
+                              </div>
+                              <div class="offset-md-2"></div>
+                              <div class="col-md-10">
+                                  {{comm.comContent}}
+                              </div>
+                      </div>
+                  </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

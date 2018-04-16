@@ -12,23 +12,23 @@
 .head-btn > .btn{
 	width: 100%;
 }
-.query-item{
+.notes-item{
     padding: 20px 15px;
     border: 1px solid #45e0b8;
     border-radius: 15px;
 }
-.query-item > .row{
+.notes-item > .row{
     margin-bottom: 10px;
 }
-.query-item-content{
+.notes-item-content{
     padding: 15px;
 }
-.query-list-head{
+.notes-list-head{
     text-align: center;
     padding-top: 100px;
     margin: 0 auto;
 }
-.query-list-head > button{
+.notes-list-head > button{
     /* margin: 5px 30px;
     padding: 8px 30px; */
     background: #45e0b8;
@@ -39,14 +39,14 @@
     box-shadow: none!important;
     border: 1px solid #fff;
 }
-.query-list-head > button:hover{
+.notes-list-head > button:hover{
     border: 1px solid #fff;
     text-decoration: none;
     background: #71ccb4;
     transform: scale(1.2);
     transition: 0.3s;
 }
-.query-list-head > button:active{
+.notes-list-head > button:active{
     background: #71ccb4!important;
     border: 1px solid #fff!important;    
     box-shadow: none!important;

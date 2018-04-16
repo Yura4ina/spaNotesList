@@ -9,25 +9,25 @@ import { ActivatedRoute } from '@angular/router';
   providers : [FirebaseService]
 })
 export class EditFormComponent implements OnInit {
-	spaOueryListArray: any[];
+	spaNoteListArray: any[];
 	id =  this.aRoute.snapshot.paramMap.get('id');
   constructor(private firebaseService: FirebaseService, private aRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.firebaseService.getNoteList().snapshotChanges()
 		.subscribe( item => {
-			this.spaOueryListArray = [];
+			this.spaNoteListArray = [];
 			item.forEach(element => {
 				var x = element.payload.toJSON();
 				x["$key"] = element.key;
-				this.spaOueryListArray.push(x);
+				this.spaNoteListArray.push(x);
 			})
 		})
   }
 
-  onEditNote_($key, queryAut, queryCont){
-		this.firebaseService.updateNoteA($key, {author: queryAut.value, content: queryCont.value});
-		queryAut.value = null;
-		queryCont.value = null;
+  onEditNote_($key, noteTitle, noteCont){
+		this.firebaseService.updateNoteA($key, {title: noteTitle.value, content: noteCont.value});
+		noteTitle.value = null;
+		noteCont.value = null;
 	}
 }

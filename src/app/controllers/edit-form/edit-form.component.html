@@ -1,14 +1,14 @@
-<div *ngFor="let query of spaOueryListArray;">
-  <div class="row" *ngIf="id == query.id">
+<div *ngFor="let note of spaNoteListArray;">
+  <div class="row" *ngIf="id == note.id">
     <div class="col-md-9 head-inputs">
         <label for="author">Author name</label>
-        <input type="text" id="author" value="{{query.author}}" class="form-control" #queryAut>
+        <input type="text" id="author" value="{{note.title}}" class="form-control" #noteTitle>
         <label for="exampleFormControlTextarea1">Note content</label>
-        <textarea rows="7" name="queryContent" id="exampleFormControlTextarea1" class="form-control" #queryCont>{{query.content}}
+        <textarea rows="7" name="noteContent" id="exampleFormControlTextarea1" class="form-control" #noteCont>{{note.content}}
         </textarea>
     </div>
     <div class="col-md-3 head-btn">
-      <button type="button" class="btn btn-primary" (click)="onEditNote_(query.$key, queryAut, queryCont)" routerLink="/viewList">Edit Note</button>
+      <button type="button" class="btn btn-primary" (click)="onEditNote_(note.$key, noteTitle, noteCont)" routerLink="/viewList">Edit Note</button>
     </div>
   </div>
 </div>

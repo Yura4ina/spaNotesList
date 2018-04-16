@@ -8,7 +8,7 @@ import { SingleQueryComponent } from './controllers/single-query/single-query.co
 const routes: Routes = [
     { path: 'addForm', component: NotesFormComponent },
     { path: 'editForm/:id', component: EditFormComponent },
-    { path: 'singleQuery/:id', component: SingleQueryComponent },
+    { path: 'singleNote/:id', component: SingleQueryComponent },
     { path: 'viewList', component: SpanotesComponent }
 ];
 
